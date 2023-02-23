@@ -14,8 +14,24 @@ function App() {
   }, [])
   return (
     <div>
-      hi
-      {backendData.users && backendData.users.map(user => <p key={user}>{user}</p>)}
+      {backendData.users ?
+      <>
+        {
+          backendData.users.map(
+            user => <p key={user}>{user}</p>
+          )
+        }
+      </> :
+      <p>
+        Loading...
+      </p>
+      }
+      {/* {
+        backendData.users ?<></>
+        backendData.users.map(
+          user => <p key={user}>{user}</p>
+        )
+      } */}
     </div>
   )
 }
